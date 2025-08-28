@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn4s8i4bu2ka1"]
+
+[ext_resource type="PackedScene" uid="uid://hdpxa3lkc81o" path="res://scenes/kitty.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://gh5v2tpfaisi" path="res://scenes/bg.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dnriceecglpkx" path="res://scenes/tilemap.tscn" id="3_h2yge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5.73, 5.73)
+
+[node name="kitty" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(-76, 26)
+
+[node name="BG" parent="." instance=ExtResource("2_0xm2m")]
+offset = Vector2(-100, -55.81)
+scale = Vector2(0.35, 0.35)
+transform = Transform2D(0.35, 0, 0, 0.35, -100, -55.81)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(-102, -2)
