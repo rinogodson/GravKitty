@@ -4,10 +4,6 @@
 [ext_resource type="Script" uid="uid://dgncm3074xwbk" path="res://scripts/kitty.gd" id="1_r7qoi"]
 [ext_resource type="Texture2D" uid="uid://5cr42tg0w5my" path="res://assets/kitty/7 walk.png" id="2_tqbcw"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqbcw"]
-radius = 5.0
-height = 14.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqbcw"]
 atlas = ExtResource("1_q4drk")
 region = Rect2(0, 0, 16, 16)
@@ -82,14 +78,19 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="kitty" type="CharacterBody2D"]
-script = ExtResource("1_r7qoi")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqbcw"]
+radius = 5.0
+height = 14.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_tqbcw")
+[node name="kitty" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_r7qoi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_x15o3")
 animation = &"running"
 autoplay = "running"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tqbcw")

@@ -24,6 +24,10 @@ window/size/resizable=false
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+obstacle=""
+
 [input]
 
 jump={
