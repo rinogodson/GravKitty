@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 
 		if Input.is_action_just_pressed("gravity"):
 			gravity_down = !gravity_down
+			%gravityflip.play()
 			velocity.y = -JUMP_VELOCITY if gravity_down else JUMP_VELOCITY
 			$AnimatedSprite2D.flip_v = not gravity_down
 	else:
